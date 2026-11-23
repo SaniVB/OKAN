@@ -1,101 +1,195 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>OKAN | Desenvolvimento Humano Integral</title>
 
-  <title>OKAN | Desenvolvimento Humano Integral</title>
+<style>
+:root{--verde:#073f3b;--verde2:#052f2c;--ouro:#c8a565;--creme:#f8f4e9;--branco:#fffdf7;--texto:#173f3b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--creme);color:var(--texto);line-height:1.6}
 
-  <style>
-    :root {
-      --verde: #073f3b;
-      --verde-escuro: #052f2c;
-      --dourado: #c8a565;
-      --dourado-claro: #e1ca92;
-      --creme: #f8f4e9;
-      --branco: #fffdf7;
-      --texto: #173f3b;
-    }
+header{background:rgba(255,253,247,.97);border-bottom:1px solid #dfc996;position:sticky;top:0;z-index:99}
+.nav{max-width:1400px;margin:auto;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{font:30px Georgia,serif;letter-spacing:6px;color:var(--verde)}
+.menu{display:flex;align-items:center;justify-content:center;gap:23px;flex-wrap:wrap}
+.menu a{text-decoration:none;color:var(--verde);font-size:12px;text-transform:uppercase;letter-spacing:1.5px}
+.menu a:hover{color:var(--ouro)}
+.menu .marcar{background:var(--verde);color:white;padding:12px 20px;border-radius:30px}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+.hero{min-height:470px;display:flex;align-items:center;justify-content:center;text-align:center;padding:75px 20px;position:relative;overflow:hidden;background:linear-gradient(135deg,#fffdf7,#f8f4e9)}
+.hero:after{content:"";position:absolute;width:440px;height:440px;background:var(--verde);border:7px solid var(--ouro);border-radius:50%;right:-280px;top:-230px}
+.hero-content{position:relative;z-index:2}
+.symbol{width:75px;height:75px;border:7px solid var(--ouro);border-right-color:var(--verde);border-radius:50%;margin:0 auto 15px}
+.hero h1{font:normal clamp(55px,8vw,90px) Georgia,serif;letter-spacing:12px;color:var(--verde);line-height:1}
+.hero h2{font:normal 21px Georgia,serif;color:#9a7949;margin-top:12px}
+.hero-services{margin-top:24px;font-size:14px}
+.hero-services span{color:var(--ouro);margin:0 9px}
+.slogan{font:italic 19px Georgia,serif;margin-top:18px}
 
-    html {
-      scroll-behavior: smooth;
-    }
+.servicos{max-width:1450px;margin:auto;padding:70px 4%}
+.titulo{text-align:center;font:normal 38px Georgia,serif;color:var(--verde)}
+.intro{text-align:center;max-width:760px;margin:10px auto 45px;color:#60736f}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--texto);
-      background: var(--creme);
-      line-height: 1.6;
-    }
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:17px}
+.card{background:var(--branco);border:1px solid rgba(200,165,101,.4);border-radius:18px;padding:12px;display:flex;flex-direction:column;min-height:480px;box-shadow:0 8px 22px rgba(7,63,59,.06);transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(7,63,59,.13)}
 
-    /* MENU */
+.foto{height:205px;border-radius:13px;background:linear-gradient(135deg,#eee3cb,#dbe2d8);display:flex;align-items:center;justify-content:center;text-align:center;font:18px Georgia,serif;color:var(--verde);padding:20px}
+.conteudo{padding:20px 13px;text-align:center;display:flex;flex-direction:column;flex:1}
+.card h3{font:normal 25px Georgia,serif;color:var(--verde);line-height:1.2}
+.card h4{font:normal 17px Georgia,serif;margin-top:8px}
+.linha{width:42px;height:1px;background:var(--ouro);margin:19px auto}
+.card ul{list-style:none;margin-bottom:18px;font-family:Georgia,serif}
+.card p{font-family:Georgia,serif;margin-bottom:18px}
 
-    header {
-      background: rgba(255,253,247,0.96);
-      border-bottom: 1px solid rgba(200,165,101,0.35);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+.botao{display:block;background:var(--verde);color:#fff;text-decoration:none;text-transform:uppercase;font-size:11px;letter-spacing:1.5px;border-radius:30px;padding:12px 15px;margin-top:auto}
+.botao:hover{background:var(--ouro);color:var(--verde2)}
 
-    .nav {
-      max-width: 1400px;
-      margin: auto;
-      padding: 18px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
+.frase{background:#fffdf7;text-align:center;padding:65px 20px}
+.frase blockquote{font:italic 27px Georgia,serif;color:var(--verde)}
 
-    .brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 30px;
-      letter-spacing: 6px;
-      color: var(--verde);
-      font-weight: normal;
-    }
+.contactos{text-align:center;padding:70px 20px}
+.contactos h2{font:normal 36px Georgia,serif;color:var(--verde)}
+.contactos p{max-width:650px;margin:15px auto 25px}
 
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-      flex-wrap: wrap;
-    }
+footer{background:linear-gradient(135deg,var(--verde2),var(--verde));color:white;border-top:4px solid var(--ouro);padding:45px 6% 25px}
+.footer{max-width:1400px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.footer-logo{font:normal 38px Georgia,serif;letter-spacing:7px}
+footer small{display:block;text-align:center;margin-top:35px;opacity:.7}
 
-    .menu a {
-      color: var(--verde);
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
+@media(max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:800px){.nav{flex-direction:column}.menu{gap:14px}.hero-services span{display:none}.footer{flex-direction:column;text-align:center}}
+@media(max-width:600px){.cards{grid-template-columns:1fr}.hero h1{font-size:52px;letter-spacing:7px}.card{min-height:auto}}
+</style>
+</head>
 
-    .menu a:hover {
-      color: var(--dourado);
-    }
+<body>
 
-    .btn-consulta {
-      background: var(--verde);
-      color: white !important;
-      padding: 12px 22px;
-      border-radius: 30px;
-    }
+<header>
+<div class="nav">
+<div class="brand">OKAN</div>
+<nav class="menu">
+<a href="#inicio">Início</a>
+<a href="#sobre">Sobre Nós</a>
+<a href="#servicos">Serviços</a>
+<a href="#loja">Loja Online</a>
+<a href="#parcerias">Parcerias</a>
+<a href="#contactos">Contactos</a>
+<a href="#servicos" class="marcar">Marcar Consulta</a>
+</nav>
+</div>
+</header>
 
-    /* HERO */
+<section class="hero" id="inicio">
+<div class="hero-content">
+<div class="symbol"></div>
+<h1>OKAN</h1>
+<h2>Desenvolvimento Humano Integral</h2>
+<div class="hero-services">
+Terapias <span>•</span>
+Psicologia <span>•</span>
+Formação <span>•</span>
+Palestras <span>•</span>
+Desenvolvimento Pessoal
+</div>
+<p class="slogan">Promover Mudança. Desenvolver Pessoas. Transformar Vidas.</p>
+</div>
+</section>
 
-    .hero {
-      min-height: 430px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding
+<section class="servicos" id="servicos">
+<h2 class="titulo">Os nossos serviços</h2>
+<p class="intro">Um espaço dedicado ao desenvolvimento humano, unindo diferentes profissionais, serviços e recursos para promover equilíbrio, conhecimento e transformação.</p>
+
+<div class="cards">
+
+<article class="card">
+<div class="foto">Fotografia<br>Pedro Brandão</div>
+<div class="conteudo">
+<h3>Pedro Brandão</h3>
+<h4>Terapia online e presencial</h4>
+<div class="linha"></div>
+<ul>
+<li>Palestras</li>
+<li>Cursos</li>
+<li>E-books</li>
+</ul>
+<a class="botao" href="pedro.html">Saber mais →</a>
+</div>
+</article>
+
+<article class="card">
+<div class="foto">Fotografia<br>Neuza Patricia</div>
+<div class="conteudo">
+<h3>Neuza Patricia</h3>
+<h4>Psicologia</h4>
+<div class="linha"></div>
+<p>Consultas online e presencial</p>
+<a class="botao" href="neuza.html">Saber mais →</a>
+</div>
+</article>
+
+<article class="card">
+<div class="foto">Fotografia<br>Flávia Nepomuceno</div>
+<div class="conteudo">
+<h3>Flávia Nepomuceno</h3>
+<h4>Apometria e Cura Quântica</h4>
+<div class="linha"></div>
+<p>Atendimento online e presencial</p>
+<a class="botao" href="flavia.html">Saber mais →</a>
+</div>
+</article>
+
+<article class="card" id="loja">
+<div class="foto">✦<br>LOJA OKAN</div>
+<div class="conteudo">
+<h3>Loja Online</h3>
+<div class="linha"></div>
+<p>Produtos, livros e recursos relacionados com bem-estar, espiritualidade e desenvolvimento pessoal.</p>
+<a class="botao" href="loja.html">Visitar Loja →</a>
+</div>
+</article>
+
+<article class="card" id="parcerias">
+<div class="foto">PARCERIAS</div>
+<div class="conteudo">
+<h3>Parcerias</h3>
+<h4>Juntos por um mundo mais humano.</h4>
+<div class="linha"></div>
+<ul>
+<li><strong>Ajuda TU</strong></li>
+<li><strong>Lab3D_World</strong></li>
+<li><strong>João</strong></li>
+</ul>
+<a class="botao" href="parcerias.html">Saber mais →</a>
+</div>
+</article>
+
+</div>
+</section>
+
+<section class="frase" id="sobre">
+<blockquote>“Promover Mudança. Desenvolver Pessoas. Transformar Vidas.”</blockquote>
+</section>
+
+<section class="contactos" id="contactos">
+<h2>Entre em contacto</h2>
+<p>Escolha o profissional ou serviço pretendido e descubra as opções de atendimento disponíveis.</p>
+<a class="botao" style="max-width:270px;margin:auto" href="#servicos">Ver serviços</a>
+</section>
+
+<footer>
+<div class="footer">
+<div>
+<div class="footer-logo">OKAN</div>
+<p>Desenvolvimento Humano Integral</p>
+</div>
+<div><em>Mais do que serviços, pessoas.</em></div>
+</div>
+<small>© 2026 OKAN - Desenvolvimento Humano Integral. Todos os direitos reservados.</small>
+</footer>
+
+</body>
+</html>
