@@ -1,1 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Parcerias | OKAN</title>
+
+<style>
+
+:root{
+  --verde:#073f3b;
+  --verde-escuro:#052f2c;
+  --ouro:#c8a565;
+  --ouro-claro:#e1ca92;
+  --creme:#f8f4e9;
+  --branco:#fffdf7;
+  --texto:#173f3b;
+  --cinza:#64736f;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--creme);
+  color:var(--texto);
+  line-height:1.6;
+}
+
+/* CABEÇALHO */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,253,247,.97);
+  border-bottom:1px solid rgba(200,165,101,.35);
+}
+
+.nav{
+  max-width:1250px;
+  margin:auto;
+  padding:14px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.logo-menu{
+  width:145px;
+  height:auto;
+  display:block;
+}
+
+.menu{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.menu a{
+  color:var(--verde);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-size:12px;
+}
+
+.menu a:hover{
+  color:var(--ouro);
+}
+
+.voltar{
+  border:1px solid var(--ouro);
+  border-radius:30px;
+  padding:10px 19px;
+}
+
+/* HERO */
+
+.hero{
+  text-align:center;
+  padding:65px 20px 55px;
+
+  background:
+    radial-gradient(
+      circle at 0 100%,
+      rgba(7,63,59,.05) 0 160px,
+      transparent 162px
+    ),
+    linear-gradient(
+      135deg,
+      var(--branco),
+      var(--creme)
+    );
+
+  border-bottom:1px solid rgba(200,165,101,.20);
+}
+
+.hero-label{
+  color:var(--ouro);
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.hero h1{
+  margin-top:8px;
+  color:var(--verde);
+  font:normal clamp(44px,6vw,68px) Georgia,serif;
+}
+
+.linha{
+  width:65px;
+  height:2px;
+  background:var(--ouro);
+  margin:20px auto;
+}
+
+.hero-frase{
+  max-width:700px;
+  margin:auto;
+  color:var(--cinza);
+  font:normal 20px Georgia,serif;
+}
+
+/* INTRODUÇÃO */
+
+.introducao{
+  background:var(--branco);
+  padding:60px 20px;
+  text-align:center;
+}
+
+.introducao p{
+  max-width:800px;
+  margin:auto;
+  color:var(--cinza);
+  font-size:16px;
+}
+
+/* PARCEIROS */
+
+.parceiros{
+  max-width:1100px;
+  margin:auto;
+  padding:75px 5% 90px;
+}
+
+.parceiros h2{
+  text-align:center;
+  font:normal 38px Georgia,serif;
+  color:var(--verde);
+}
+
+.grelha{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:35px;
+}
+
+/* CARTÃO */
+
+.parceiro{
+  background:var(--branco);
+  border:1px solid rgba(200,165,101,.38);
+  border-radius:22px;
+  padding:16px;
+  box-shadow:0 10px 28px rgba(7,63,59,.07);
+  transition:.25s;
+  display:flex;
+  flex-direction:column;
+}
+
+.parceiro:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 38px rgba(7,63,59,.13);
+}
+
+.imagem{
+  height:350px;
+  border-radius:17px;
+  overflow:hidden;
+  background:#f3eddf;
+}
+
+.imagem img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.conteudo{
+  text-align:center;
+  padding:28px 25px 20px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.conteudo h3{
+  font:normal 31px Georgia,serif;
+  color:var(--verde);
+}
+
+.assinatura{
+  color:var(--ouro);
+  font:italic 17px Georgia,serif;
+  margin:8px 0 18px;
+}
+
+.descricao{
+  color:var(--cinza);
+  margin-bottom:25px;
+  font-size:15px;
+}
+
+/* BOTÕES */
+
+.botao{
+  display:inline-block;
+  margin-top:auto;
+  padding:13px 24px;
+  border-radius:30px;
+  background:var(--verde);
+  color:white;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:11px;
+  letter-spacing:1.5px;
+}
+
+.botao:hover{
+  background:var(--ouro);
+  color:var(--verde-escuro);
+}
+
+/* MISSÃO */
+
+.missao{
+  background:var(--verde);
+  color:white;
+  padding:70px 20px;
+  text-align:center;
+}
+
+.missao h2{
+  color:var(--ouro-claro);
+  font:normal 35px Georgia,serif;
+}
+
+.missao blockquote{
+  max-width:780px;
+  margin:20px auto 0;
+  color:rgba(255,255,255,.85);
+  font:italic 21px Georgia,serif;
+}
+
+/* CONTACTOS */
+
+.contacto{
+  padding:65px 20px;
+  text-align:center;
+  background:var(--branco);
+}
+
+.contacto h2{
+  font:normal 34px Georgia,serif;
+  color:var(--verde);
+}
+
+.contacto p{
+  max-width:650px;
+  margin:15px auto 25px;
+  color:var(--cinza);
+}
+
+/* RODAPÉ */
+
+footer{
+  background:
+    linear-gradient(
+      135deg,
+      var(--verde-escuro),
+      var(--verde)
+    );
+
+  border-top:4px solid var(--ouro);
+  color:white;
+  padding:45px 6% 25px;
+}
+
+.footer{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.footer-logo{
+  width:150px;
+  filter:brightness(0) invert(1);
+  opacity:.92;
+}
+
+.footer-frase{
+  font:italic 18px Georgia,serif;
+  color:var(--ouro-claro);
+}
+
+footer small{
+  display:block;
+  margin-top:35px;
+  text-align:center;
+  color:rgba(255,255,255,.65);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:800px){
+
+  .nav{
+    flex-direction:column;
+  }
+
+  .menu{
+    justify-content:center;
+  }
+
+  .grelha{
+    grid-template-columns:1fr;
+  }
+
+  .imagem{
+    height:320px;
+  }
+
+  .footer{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+@media(max-width:480px){
+
+  .hero{
+    padding:45px 20px;
+  }
+
+  .imagem{
+    height:270px;
+  }
+
+  .parceiros{
+    padding-left:18px;
+    padding-right:18px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<a href="index.html">
+
+<img
+src="./logo-okan.png"
+alt="OKAN - Desenvolvimento Humano Integral"
+class="logo-menu">
+
+</a>
+
+<nav class="menu">
+
+<a href="#parceiros">
+Parceiros
+</a>
+
+<a href="#missao">
+A nossa visão
+</a>
+
+<a href="index.html"
+class="voltar">
+Voltar ao Portal
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<p class="hero-label">
+OKAN · DESENVOLVIMENTO HUMANO INTEGRAL
+</p>
+
+<h1>Parcerias</h1>
+
+<div class="linha"></div>
+
+<p class="hero-frase">
+Juntos por um mundo mais humano.
+</p>
+
+</section>
+
+
+<!-- INTRODUÇÃO -->
+
+<section class="introducao">
+
+<p>
+O Portal OKAN acredita no valor da colaboração,
+na partilha de conhecimento e na criação de projetos
+capazes de gerar impacto positivo.
+Conheça os parceiros que fazem parte deste ecossistema.
+</p>
+
+</section>
+
+
+<!-- PARCEIROS -->
+
+<section class="parceiros" id="parceiros">
+
+<h2>Os nossos parceiros</h2>
+
+<div class="linha"></div>
+
+<div class="grelha">
+
+
+<!-- AJUDA TU -->
+
+<article class="parceiro">
+
+<div class="imagem">
+
+<img
+src="./ajuda-tu.png"
+alt="Ajuda TU">
+
+</div>
+
+<div class="conteudo">
+
+<h3>Ajuda TU</h3>
+
+<p class="assinatura">
+Porque ajudar está mesmo nas tuas mãos!
+</p>
+
+<p class="descricao">
+Projeto parceiro dedicado à colaboração,
+partilha e desenvolvimento de iniciativas
+com impacto positivo na comunidade.
+</p>
+
+<a href="#contacto"
+class="botao">
+Conhecer parceiro →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- LAB3DWORLD -->
+
+<article class="parceiro">
+
+<div class="imagem">
+
+<img
+src="./lab3dworld.png"
+alt="Lab3DWorld">
+
+</div>
+
+<div class="conteudo">
+
+<h3>Lab3DWorld</h3>
+
+<p class="assinatura">
+Pense. Crie. Imprima.
+</p>
+
+<p class="descricao">
+Projeto dedicado à impressão 3D e à transformação
+de ideias em objetos, combinando criatividade,
+tecnologia e produção digital.
+</p>
+
+<a href="#contacto"
+class="botao">
+Conhecer parceiro →
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- VISÃO -->
+
+<section class="missao" id="missao">
+
+<h2>
+Colaboração que cria valor
+</h2>
+
+<blockquote>
+“Diferentes conhecimentos, experiências e ideias
+podem transformar-se em projetos com propósito.”
+</blockquote>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section class="contacto" id="contacto">
+
+<h2>
+Parcerias e colaboração
+</h2>
+
+<div class="linha"></div>
+
+<p>
+Os endereços oficiais dos parceiros serão adicionados
+a esta página para permitir acesso direto aos respetivos
+projetos, redes sociais e canais de contacto.
+</p>
+
+<a href="index.html"
+class="botao">
+Voltar ao Portal
+</a>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="footer">
+
+<a href="index.html">
+
+<img
+src="./logo-okan.png"
+alt="OKAN"
+class="footer-logo">
+
+</a>
+
+<p class="footer-frase">
+Promover Mudança. Desenvolver Pessoas. Transformar Vidas.
+</p>
+
+</div>
+
+<small>
+© 2026 OKAN - Desenvolvimento Humano Integral.
+Todos os direitos reservados.
+</small>
+
+</footer>
+
+</body>
+</html>
