@@ -37,7 +37,50 @@ header{background:rgba(255,253,247,.97);border-bottom:1px solid #dfc996;position
 .titulo{text-align:center;font:normal 38px Georgia,serif;color:var(--verde)}
 .intro{text-align:center;max-width:760px;margin:10px auto 45px;color:#60736f}
 
-.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:17px}
+.cards{
+  display:grid;
+  gap:24px;
+}
+
+.profissionais{
+  grid-template-columns:repeat(3,1fr);
+  max-width:900px;
+  margin:0 auto;
+}
+
+.parceiros-home{
+  grid-template-columns:repeat(3,1fr);
+  max-width:900px;
+  margin:0 auto;
+}
+
+.subtitulo-area{
+  text-align:center;
+  font:normal 30px Georgia,serif;
+  color:var(--verde);
+  margin-bottom:8px;
+}
+
+.linha-area{
+  width:45px;
+  height:1px;
+  background:var(--ouro);
+  margin:0 auto 30px;
+}
+
+.separacao-parceiros{@media(max-width:1100px)
+  margin-top:75px;
+  padding-top:55px;
+  border-top:1px solid rgba(200,165,101,.25);
+}
+
+.texto-parceiros{
+  text-align:center;
+  max-width:650px;
+  margin:-10px auto 35px;
+  color:#60736f;
+  font-family:Georgia,serif;
+}
 .card{background:var(--branco);border:1px solid rgba(200,165,101,.4);border-radius:18px;padding:12px;display:flex;flex-direction:column;min-height:480px;box-shadow:0 8px 22px rgba(7,63,59,.06);transition:.25s}
 .card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(7,63,59,.13)}
 
@@ -72,9 +115,20 @@ footer{background:linear-gradient(135deg,var(--verde2),var(--verde));color:white
 .footer-logo{font:normal 38px Georgia,serif;letter-spacing:7px}
 footer small{display:block;text-align:center;margin-top:35px;opacity:.7}
 
-@media(max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  .profissionais,
+  .parceiros-home{
+    grid-template-columns:repeat(2,1fr);
+    max-width:650px;
+  }
+
+}
 @media(max-width:800px){.nav{flex-direction:column}.menu{gap:14px}.hero-services span{display:none}.footer{flex-direction:column;text-align:center}}
-@media(max-width:600px){.cards{grid-template-columns:1fr}.hero h1{font-size:52px;letter-spacing:7px}.card{min-height:auto}}
+.profissionais,
+.parceiros-home{
+  grid-template-columns:1fr;
+  max-width:380px;
+}
 </style>
 </head>
 
@@ -113,74 +167,160 @@ Desenvolvimento Pessoal
 <h2 class="titulo">Os nossos serviços</h2>
 <p class="intro">Um espaço dedicado ao desenvolvimento humano, unindo diferentes profissionais, serviços e recursos para promover equilíbrio, conhecimento e transformação.</p>
 
-<div class="cards">
+<!-- PROFISSIONAIS -->
+
+<h2 class="subtitulo-area">Profissionais</h2>
+<div class="linha-area"></div>
+
+<div class="cards profissionais">
 
 <article class="card">
 <div class="foto">
-  <img src="./pedro-okan.png" alt="Retrato profissional">
+<img src="./pedro-okan.png" alt="Retrato profissional">
 </div>
+
 <div class="conteudo">
 <h3>Pedro Brandão</h3>
 <h4>Terapia online e presencial</h4>
 <div class="linha"></div>
+
 <ul>
 <li>Palestras</li>
 <li>Cursos e E-books</li>
 </ul>
-<a class="botao" href="pedro.html">Saber mais →</a>
+
+<a class="botao" href="pedro.html">
+Saber mais →
+</a>
 </div>
 </article>
 
+
 <article class="card">
 <div class="foto">
-  <img src="./neuza-okan.png" alt="Retrato profissional">
+<img src="./neuza-okan.png" alt="Retrato profissional">
 </div>
+
 <div class="conteudo">
 <h3>Neuza dos Santos</h3>
 <h4>Psicologia infantil</h4>
 <div class="linha"></div>
-<p>Consultas online e presencial</p>
-<a class="botao" href="neuza.html">Saber mais →</a>
+
+<p>
+Consultas online e presencial
+</p>
+
+<a class="botao" href="neuza.html">
+Saber mais →
+</a>
 </div>
 </article>
 
+
 <article class="card">
 <div class="foto">
-  <img src="./flavia-okan.png" alt="Retrato profissional">
+<img src="./flavia-okan.png" alt="Retrato profissional">
 </div>
+
 <div class="conteudo">
 <h3>Flávia Nepomuceno</h3>
 <h4>Apometria e Cura Quântica</h4>
 <div class="linha"></div>
-<p>Atendimento online e presencial</p>
-<a class="botao" href="flavia.html">Saber mais →</a>
+
+<p>
+Atendimento online e presencial
+</p>
+
+<a class="botao" href="flavia.html">
+Saber mais →
+</a>
 </div>
 </article>
 
-<article class="card" id="loja">
-<div class="foto">
-  <img src="./aura-magia.png" alt="Aura & Magia - Artigos Esotéricos">
 </div>
+
+<!-- PARCEIROS -->
+
+<div class="separacao-parceiros">
+
+<h2 class="subtitulo-area">Parceiros</h2>
+<div class="linha-area"></div>
+
+<p class="texto-parceiros">
+Colaborações que unem propósito, criatividade e impacto positivo.
+</p>
+
+<div class="cards parceiros-home">
+
+<!-- AURA & MAGIA -->
+
+<article class="card">
+<div class="foto">
+<img src="./aura-magia.png"
+alt="Aura & Magia - Artigos Esotéricos">
+</div>
+
 <div class="conteudo">
 <h3>Aura & Magia</h3>
-<h4>Loja Online</h4>
+<h4>Artigos Esotéricos</h4>
+
 <div class="linha"></div>
-<p>Produtos, Imagens, Incensos, Decoração.</p>
-<a class="botao" href="loja.html">Visitar Loja →</a>
+
+<p>
+Espiritualidade, bem-estar e artigos selecionados.
+</p>
+
+<a class="botao" href="parcerias.html#aura">
+Conhecer parceiro →
+</a>
 </div>
 </article>
 
-<article class="card" id="parcerias">
-<div class="foto">PARCERIAS</div>
+<!-- AJUDA TU -->
+
+<article class="card">
+<div class="foto">
+<img src="./ajuda-tu.png"
+alt="Ajuda TU">
+</div>
+
 <div class="conteudo">
-<h3>Parcerias</h3>
-<h4>Juntos por um mundo mais humano.</h4>
+<h3>Ajuda TU</h3>
+<h4>Impacto Social</h4>
+
 <div class="linha"></div>
-<ul>
-<li><strong>Ajuda TU</strong></li>
-<li><strong>Lab3D_World</strong></li>
-</ul>
-<a class="botao" href="parcerias.html">Saber mais →</a>
+
+<p>
+Porque ajudar está mesmo nas tuas mãos!
+</p>
+
+<a class="botao" href="parcerias.html#ajudatu">
+Conhecer parceiro →
+</a>
+</div>
+</article>
+
+<!-- LAB3DWORLD -->
+
+<article class="card">
+<div class="foto">
+<img src="./lab3dworld.png"
+alt="Lab3DWorld">
+</div>
+
+<div class="conteudo">
+<h3>Lab3DWorld</h3>
+<h4>Impressão 3D</h4>
+
+<div class="linha"></div>
+
+<p>
+Pense. Crie. Imprima.
+</p>
+
+<a class="botao" href="parcerias.html#lab3d">
+Conhecer parceiro →
+</a>
 </div>
 </article>
 
